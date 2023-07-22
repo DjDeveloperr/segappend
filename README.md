@@ -21,6 +21,10 @@ deno task build
 deno task run <input-file> <segment-name> <segment-data-file> <output-file>
 ```
 
+## Resources
+
+- [Adding a Segment to an Existing macOS Mach-O Binary (Alexander O'Mara)](https://alexomara.com/blog/adding-a-segment-to-an-existing-macos-mach-o-binary/)
+
 ## License
 
 Apache-2.0 License
