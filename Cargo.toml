@@ -9,7 +9,14 @@ repository = "https://github.com/DjDeveloperr/segappend"
 documentation = "https://docs.rs/segappend"
 readme = "README.md"
 
-[dependencies]
+include = [
+    "**/*.rs",
+    "Cargo.toml",
+    "README.md",
+    "LICENSE",
+    "include/segappend.h",
+    "src/segappend.cc"
+]
 
 [build-dependencies]
 cc = "1.0.79"
