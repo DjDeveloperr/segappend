@@ -27,7 +27,9 @@ int main(int argc, char *argv[]) {
   }
 
   if (argc < 5) {
-    printf("Usage: %s <file>\n", argv[0]);
+    printf("Usage: %s <input-file> <segment-name> <segment-data-file> "
+           "<output-file>\n",
+           argv[0]);
     return 1;
   }
 
