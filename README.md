@@ -9,7 +9,7 @@ Only supports Mach-O 64-bit binaries for now (macOS, iOS, etc).
 While it is primarily meant to be used as a C library, a simple utility tool is also compiled
 along with the library. See `include/segappend.h` for the C API.
 
-There are also Rust bindings in `crate/` directory.
+There are also Rust bindings published on crates.io: [segappend](https://crates.io/crates/segappend).
 
 ## Build
 

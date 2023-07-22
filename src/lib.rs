@@ -40,8 +40,7 @@ impl From<u32> for SegappendError {
 pub fn create(
     binary_path: &str,
     segment_name: &str,
-    data: *const u8,
-    size: usize,
+    data: &[u8],
     output_path: &str,
 ) -> Result<(), SegappendError> {
     let binary_path = std::ffi::CString::new(binary_path).unwrap();
@@ -51,8 +50,8 @@ pub fn create(
         segappend_create_segment(
             binary_path.as_ptr(),
             segment_name.as_ptr(),
-            data,
-            size,
+            data.as_ptr(),
+            data.len(),
             output_path.as_ptr(),
         )
     };
@@ -63,13 +62,13 @@ pub fn create(
     }
 }
 
-pub fn load(segment_name: &str) -> Result<*const u8, SegappendError> {
+pub fn load(segment_name: &str) -> Result<&[u8], SegappendError> {
     let mut data: *const u8 = std::ptr::null();
     let mut size: usize = 0;
     let segment_name = std::ffi::CString::new(segment_name).unwrap();
     let result = unsafe { segappend_load_segment(segment_name.as_ptr(), &mut data, &mut size) };
     if result == 0 {
-        Ok(data)
+        Ok(unsafe { std::slice::from_raw_parts(data, size) })
     } else {
         Err(SegappendError::from(result))
     }
