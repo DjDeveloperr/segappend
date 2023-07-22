@@ -2,6 +2,12 @@
 name = "segappend"
 version = "0.1.0"
 edition = "2021"
+license = "Apache-2.0"
+description = "Append custom data to compiled binaries by creating a new segment."
+homepage = "https://github.com/DjDeveloperr/segappend"
+repository = "https://github.com/DjDeveloperr/segappend"
+documentation = "https://docs.rs/segappend"
+readme = "../README.md"
 
 [dependencies]
 
