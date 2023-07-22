@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "build": "rm -rf build && cmake -H. -Bbuild && cmake --build build",
+    "run": "build/segappend_util"
+  }
+}
